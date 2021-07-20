@@ -89,34 +89,50 @@ double converteString(string s)
 int main()
 {
     string s;
-    int n;
-    cout << setprecision(12) << "Bem vindo ao auxilio emergencial\nDigite a quantidade de valores: ";
-    cin >> n;
-    double *vet = new double[n];
+    int status = 1;
+    int n = 0;
+    cout << setprecision(12) << "Bem vindo ao auxilio emergencial\n";
+    double *vet;
 
-    for (int i = 0; i < n; i++)
+    while (status == 1)
     {
-        cin >> s;
-        vet[i] = converteString(s);
+        cout << "\nInsira a quantidade de valores: ";
+        cin >> n;
+        vet = new double[n];
+        cout << endl
+             << "Insira os valores" << endl;
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> s;
+            vet[i] = converteString(s);
+        }
+
+        cout << endl
+             << "Valores inseridos: \n";
+
+        for (int i = 0; i < n; i++)
+        {
+            cout << vet[i] << endl;
+        }
+
+        cout << endl
+             << "Media aritmetica: " << media(vet, n) << endl;
+
+        cout << endl
+             << "Desvio padrao da amostra: " << dpAmostral(vet, n) << endl;
+
+        cout << endl
+             << "Desvio padrao da media: " << dpMedia(vet, n) << endl;
+
+        delete[] vet;
+
+        status=0;
+        cout << endl
+             << "Insira 0 para sair ou 1 para reiniciar: ";
+
+        cin >> status;
     }
 
-    cout << "\nValores convertidos: \n";
-
-    for (int i = 0; i < n; i++)
-    {
-        cout << vet[i] << endl;
-    }
-
-    cout << endl
-         << "A media dos valores eh: " << media(vet, n) << endl;
-
-    cout << endl
-         << "O desvio padrão da amostra eh: " << dpAmostral(vet, n) << endl;
-
-    cout << endl
-         << "O desvio padrão da media eh: " << dpMedia(vet, n) << endl;
-
-    cout << "\n Pressione qualquer tecla para fechar!" <<endl;
-    cin >> s;
     return 0;
 }
