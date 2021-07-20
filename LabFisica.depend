@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1626801754 source:d:\nuvem\main\labfisica\main.cpp
+	<iostream>
+	<string>
+	"math.h"
+	<iomanip>
+
