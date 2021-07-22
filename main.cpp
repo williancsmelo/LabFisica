@@ -128,7 +128,7 @@ void desviopadrao()
 
         status=0;
         cout << endl
-             << "Insira 0 para sair ou 1 para reiniciar: ";
+             << "Insira 0 para voltar para o menu ou 1 para reiniciar: ";
 
         cin >> status;
     }
@@ -229,7 +229,7 @@ void mmq()
 
         status=0;
         cout << endl
-             << "Insira 0 para sair ou 1 para reiniciar: ";
+             << "Insira 0 para voltar para o menu ou 1 para reiniciar: ";
 
         cin >> status;
     }
@@ -241,23 +241,25 @@ int main()
 {
     int choice = 0;
 
-    cout << setprecision(12) << "\t\t\tMenu \n";
-    cout << "1 - Desvio padrao da media ou desvio padrao amostral\n";
-    cout << "2 - Regressao Linear (MMQ)\n";
-    cout << "3 - Sair\n";
-
-    cin >> choice;
-
-    switch (choice)
+    while (true)
     {
-    case 1:
-        desviopadrao();
-        break;
-    case 2:
-        mmq();
-        break;
-    default:
-        break;
+        cout << setprecision(12) << "\t\t\tMenu \n";
+        cout << "1 - Desvio padrao da media ou desvio padrao amostral\n";
+        cout << "2 - Regressao Linear (MMQ)\n";
+        cout << "3 - Sair\n";
+
+        cin >> choice;
+
+        if (choice == 1)
+        {
+            desviopadrao();
+        }
+        else if (choice == 2)
+        {
+            mmq();
+        } else {
+            break;
+        }
     }
 
     return 0;
