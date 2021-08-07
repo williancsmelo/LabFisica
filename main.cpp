@@ -192,7 +192,8 @@ void mmqCalc(double x[], double y[], int n)
     cout << "\nIncerteza de a (u(a)) = " << ua;
     cout << "\n\nCoeficiente linear (b) = " << b;
     cout << "\nIncerteza de b (u(b)) = " << ub;
-    cout << "\n\nCoeficiente de correlacao linear (r) = " << r << endl << endl;
+    cout << "\n\nCoeficiente de correlacao linear (r) = " << r;
+    cout << "\n\nSomatorio do quadrado de x = " << somaX2 << endl << endl;
 }
 
 void mmq()
